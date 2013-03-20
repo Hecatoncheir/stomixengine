@@ -1,5 +1,7 @@
 StomixEngine::Application.routes.draw do
 
+  get "users/index"
+
   root to: "pages#index"
   
   get 'signup', to: 'users#new', as: 'signup'
@@ -8,6 +10,7 @@ StomixEngine::Application.routes.draw do
   
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
+    get 'users', to: 'users#index'
   end
   
   resources :users

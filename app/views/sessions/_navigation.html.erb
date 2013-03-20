@@ -1,7 +1,0 @@
-<% if current_user %>
-	<%= current_user.email %>
-	<%= link_to "Выйти", session_path("carrent"), method: :delete %>
-<% else %>
-	<%= link_to "Войти", login_path %> или
-	<%= link_to "Зарегистрироваться", signup_path %>
-<% end %>
