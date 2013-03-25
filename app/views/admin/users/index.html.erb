@@ -1,0 +1,9 @@
+<h1>Пользователи:</h1>
+
+<% @users.each do |user| %>
+
+	<%= user.email %> <br/>
+
+<% end %>
+
+<%= link_to "Назад", :back %>

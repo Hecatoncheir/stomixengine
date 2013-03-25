@@ -1,7 +1,5 @@
 StomixEngine::Application.routes.draw do
-
-  get "users/index"
-
+  
   root to: "pages#index"
   
   get 'signup', to: 'users#new', as: 'signup'
@@ -13,7 +11,7 @@ StomixEngine::Application.routes.draw do
     get 'users', to: 'users#index'
   end
   
-  resources :users
+  resources :users, only: [:new, :create]
   resources :sessions
 
 end

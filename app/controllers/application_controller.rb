@@ -10,6 +10,7 @@ private
   helper_method :current_user
   
   def auth
+    return if User.count.zero?
     redirect_to login_url, alert: "Not a Admin" if current_user.nil?
   end
   
