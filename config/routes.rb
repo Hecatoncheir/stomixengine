@@ -1,5 +1,8 @@
 StomixEngine::Application.routes.draw do
   
+  resources :images
+
+
   root to: "pages#index"
   
   get 'signup', to: 'users#new', as: 'signup'
