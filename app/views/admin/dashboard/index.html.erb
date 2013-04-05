@@ -4,6 +4,9 @@
 	<%= render partial: "layouts/navigation" %>
 </div>
 
+
+<% if current_user %>
 <ul>
   <li><%= link_to 'Пользователи', admin_users_path %></li>
 </ul>
+<% end %>
