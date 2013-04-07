@@ -1,4 +1,7 @@
 class GalleriesController < ApplicationController
+  
+  before_filter :auth, only:[:new, :edit, :destroy]
+  
   # GET /galleries
   # GET /galleries.json
   def index
