@@ -7,12 +7,9 @@ class ImagesController < ApplicationController
   end
   
   def create
-    @image = @gallery.images.create(params[:image])
-    if @image.save
-      redirect_to @gallery
-    else
-      render :show
-    end
+    @image = @gallery.images.build(params[:image])
+    @image.save
+    redirect_to @gallery
   end
   
   def destroy

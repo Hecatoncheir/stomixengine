@@ -8,6 +8,9 @@
 <% @gallery.images.each do |image| %>
 <p>
   <%= link_to image_tag(image.data.thumb.url), image.data.url %>
+  <% if current_user %>
+  	<%= link_to "Удалить", [@gallery, image], :method => :delete %>
+  <% end %>
 </p>
 
 
@@ -19,7 +22,7 @@
 	    <div class="field">
 	      <%= f.label :data %><br />
 		  
-	      <%= f.file_field :data, multiple: true %>
+	      <%= f.file_field :data %>
 	    </div>
 	    <div class="actions">
 	      <%= f.submit %>
