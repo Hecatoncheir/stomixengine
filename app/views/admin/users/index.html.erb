@@ -3,6 +3,9 @@
 <% @users.each do |user| %>
 
 	<%= user.email %> <br/>
+	<%= link_to 'Удалить', [:admin, user], method: :delete %>
+	<br/>
+	<br/>
 
 <% end %>
 

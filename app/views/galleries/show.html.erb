@@ -9,13 +9,14 @@
 <p>
   <%= link_to image_tag(image.data.thumb.url), image.data.url %>
   <% if current_user %>
-  	<%= link_to "Удалить", [@gallery, image], :method => :delete %>
+  	<%= link_to "Удалить", admin_user %>
   <% end %>
 </p>
 
 
 <% end %>
 
+<% if User.count > 0 %>
 <% if current_user %>
 
 	<%= form_for [@gallery, @gallery.images.build], :html => {:multipart => true}  do |f| %>
@@ -31,6 +32,8 @@
 		
 	<% end %>
 	
+<% end %>
+
 <% end %>
 
 

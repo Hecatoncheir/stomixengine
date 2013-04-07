@@ -13,7 +13,7 @@ StomixEngine::Application.routes.draw do
   
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
-    get 'users', to: 'users#index'
+    resources :users
   end
   
   resources :users, only: [:new, :create]

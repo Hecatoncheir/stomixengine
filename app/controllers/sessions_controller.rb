@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-    if User.count.zero?
+    if User.count == 0
       redirect_to new_user_url
     else
     user = User.find_by_email(params[:email])
