@@ -5,7 +5,7 @@ module ApplicationHelper
   end
   
   def title
-    default_title = "Stomix"
+    default_title = "Czech-Fasad"
     if @page_title.nil?
       default_title
     else
