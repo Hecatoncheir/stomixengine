@@ -22,9 +22,9 @@
 <!-- HEADER -->
 	<header id="MainHeader">
 		<div class="content">
-			<a href="#" class="logotip" ></a>
+			<%= link_to '', root_path, class:"logotip" %>
 			<nav>
-				<%= render "header" %>
+				<%= render "nav_header" %>
 			</nav>
 		</div>
 	</header>
@@ -47,7 +47,7 @@
 <!-- FOOTER -->
 	<footer id="FooterWrap">
 		<div class="content">
-			<%= render "footer" %>
+			<%= render "about" %>
 		</div>
 	</footer>
 	

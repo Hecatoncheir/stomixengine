@@ -13,5 +13,13 @@ module ApplicationHelper
     end
   end
   
+  def nav_link (text, path)
+    active_class = current_page?(path) ? 'active' :''
+    
+    content_tag(:li) do
+      link_to(text, path, class: active_class)
+    end
+  end
+  
   
 end
