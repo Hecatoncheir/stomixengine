@@ -6,7 +6,7 @@ module ApplicationHelper
   
   def title
     default_title = "Czech-Fasad"
-    if @page_title.nil?
+    if @page_title.nil? || @page_title.empty?
       default_title
     else
       "#{@page_title} |  #{default_title}"
