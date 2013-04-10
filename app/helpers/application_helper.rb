@@ -14,7 +14,7 @@ module ApplicationHelper
   end
   
   def nav_link (text, path)
-    active_class = current_page?(path) ? 'active' :''
+    active_class = current_page?(path) ? "active" : "link"
     
     content_tag(:li) do
       link_to(text, path, class: active_class)
