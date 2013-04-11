@@ -1,11 +1,13 @@
 StomixEngine::Application.routes.draw do
   
+  root to: "pages#index"
+  
+  #Galleries
   resources :galleries do
     resources :images
   end
-
-
-  root to: "pages#index"
+  
+  get 'BigObject', to: 'galleries#show#[:id = 1]', as: 'bigobject'
   
   #Pages
   get 'services', to: 'pages#services'
