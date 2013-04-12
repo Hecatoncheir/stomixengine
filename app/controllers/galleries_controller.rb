@@ -23,6 +23,17 @@ class GalleriesController < ApplicationController
       format.json { render json: @gallery }
     end
   end
+  
+  def BigObject
+    @gallery = Gallery.includes(:images).first
+    render :show
+  end
+  
+  def Cottage
+    @gallery = Gallery.includes(:images).last
+    render :show
+  end
+  
 
   # GET /galleries/new
   # GET /galleries/new.json
