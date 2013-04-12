@@ -9,6 +9,8 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 
+gem 'turbolinks'
+
 gem 'rmagick'
 gem 'carrierwave'
 
