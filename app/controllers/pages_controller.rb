@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   
-  helper_method :items, :feedback_items
+  helper_method :items, :items_for_all
   
   def index
     render :home
@@ -13,11 +13,11 @@ class PagesController < ApplicationController
 private
  
   def items
-    @items = Item.where(page: '#{controller.action_name}')
+    @items = Item.where(page: "#{self.action_name}")
   end
-
-  def feedback_items
-    @feedback_items = items.where(page: 'feedback')
+  
+  def items_for_all
+    @item_for_all = Item.where(page: 'all')
   end
   
 end
