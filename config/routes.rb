@@ -1,5 +1,8 @@
 StomixEngine::Application.routes.draw do
   
+  resources :items
+
+
   root to: "pages#index"
   
   #Galleries
