@@ -13,11 +13,11 @@ class PagesController < ApplicationController
 private
  
   def items
-    @items = Item.where(page: "#{self.action_name}")
+    Item.where(page: "#{self.action_name}")
   end
   
   def items_for_all
-    @item_for_all = Item.where(page: 'all')
+    Item.where(page: 'all')
   end
   
 end
