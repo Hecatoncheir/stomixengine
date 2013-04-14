@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  
+  before_filter :auth
+  
   # GET /items
   # GET /items.json
   def index
