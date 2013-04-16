@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
   
-  before_filter :auth, except: :show
+  before_filter :auth, except: [:show, :BigObject, :Cottage]
   
   # GET /galleries
   # GET /galleries.json
