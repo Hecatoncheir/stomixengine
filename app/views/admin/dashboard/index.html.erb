@@ -1,12 +1,17 @@
-<h1>Админка</h1>
+<article>
+	<h1><h1>Административный раздел</h1></h1>
+	<p>*Очень осторожно!</p><br/>
+</article>
 
-<div>
-	<%= render partial: "layouts/navigation" %>
-</div>
+<!-- #<div>
+#	<%= render partial: "layouts/navigation" %>
+#</div> -->
 
 
 <% if current_user %>
 <ul>
   <li><%= link_to 'Пользователи', admin_users_path %></li>
+  <li><%= link_to 'Галереи', galleries_path %></li>
+  <li><%= link_to 'Итемы', items_path %></li>
 </ul>
 <% end %>

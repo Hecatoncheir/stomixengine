@@ -5,4 +5,8 @@
 	<li><a href="#" >Продукция</a></li>
 	<li><a href="#" >Сертификаты</a></li>
 	<li><a href="#" >Цены</a></li>
+	<% if current_user %>
+		<%= nav_link 'Админка', admin_path %> | 
+		<%= link_to "Выйти", session_path("carrent"), method: :delete %>
+	<% end %>
 </ul>

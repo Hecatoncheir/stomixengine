@@ -1,7 +1,7 @@
 <% if items == true %>
 		<article>
 			<h1><%= item.title %></h1>
-			<p><%= sanitize(item.text) %></p>
+			<p><%= sanitize(item.text) %></p><%= link_to 'Изменить', edit_item_path(item) %>
 		</article>
 <% end %>
 

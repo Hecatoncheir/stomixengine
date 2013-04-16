@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
   
-  before_filter :auth, only:[:new, :edit, :destroy]
+  before_filter :auth, except: :show
   
   # GET /galleries
   # GET /galleries.json
