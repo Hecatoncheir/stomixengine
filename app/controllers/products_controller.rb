@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
-
-
+  
+  helper_method :image_delete
+  
   # GET /products
   # GET /products.json
   def index
@@ -81,6 +82,12 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url }
       format.json { head :no_content }
     end
+  end
+  
+  
+  def image_delete
+    @product = Product.find(params[:id])
+    @product.remove_image!
   end
   
 end
