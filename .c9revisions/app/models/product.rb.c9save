@@ -1,0 +1,6 @@
+{"ts":1366187139643,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class Product < ActiveRecord::Base\n  attr_accessible :advantages, :colors, :desc, :dilution, :expense, :name, :packing, :pdf_1, :pdf_2, :pdf_3\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":147}]],"length":147}
+{"ts":1366187143906,"patch":[[{"diffs":[[0,", :pdf_3"],[1,", "],[0,"\nend\n"]],"start1":134,"start2":134,"length1":13,"length2":15}]],"length":149,"saved":false}
+{"ts":1366187145360,"patch":[[{"diffs":[[0,":pdf_3, "],[1,":images"],[0,"\nend\n"]],"start1":136,"start2":136,"length1":13,"length2":20}]],"length":156,"saved":false}
+{"ts":1366187147655,"patch":[[{"diffs":[[0,":images\n"],[1,"  \n"],[0,"end\n"]],"start1":144,"start2":144,"length1":12,"length2":15}]],"length":159,"saved":false}
+{"ts":1366187152609,"patch":[[{"diffs":[[0,"mages\n  "],[1,"has_many :images, dependent: :destroy"],[0,"\nend\n"]],"start1":146,"start2":146,"length1":13,"length2":50}]],"length":196,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1366187998530,"patch":[[{"diffs":[[0,"mage"],[-1,"s"],[0,"\n  "],[-1,"has_many"],[1,"mount_uploader"],[0," :image"],[-1,"s"],[0,", "],[-1,"dependent: :destroy"],[1,"ImageUploader"],[0,"\nend"]],"start1":146,"start2":146,"length1":49,"length2":47}]],"length":194,"saved":false}

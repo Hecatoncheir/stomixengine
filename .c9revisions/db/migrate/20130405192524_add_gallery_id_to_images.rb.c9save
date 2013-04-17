@@ -1,0 +1,1 @@
+{"ts":1366187254207,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class AddGalleryIdToImages < ActiveRecord::Migration\n  def change\n    add_column :images, :gallery_id, :integer\n  end\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":122}]],"length":122}

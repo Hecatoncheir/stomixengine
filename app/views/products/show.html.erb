@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+    	<article>
+		  <%= link_to image_tag(@product.image.thumb.url), @product.image.url, class: "fb" %>
+		  <% if current_user %>
+		  <br/>
+		  	<%= link_to "Удалить", method: :delete %>
+		  <% end %>
+		</article>
+
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @product.desc %>
+</p>
+
+<p>
+  <b>Advantages:</b>
+  <%= @product.advantages %>
+</p>
+
+<p>
+  <b>Colors:</b>
+  <%= @product.colors %>
+</p>
+
+<p>
+  <b>Packing:</b>
+  <%= @product.packing %>
+</p>
+
+<p>
+  <b>Expense:</b>
+  <%= @product.expense %>
+</p>
+
+<p>
+  <b>Dilution:</b>
+  <%= @product.dilution %>
+</p>
+
+<p>
+  <b>Pdf 1:</b>
+  <%= @product.pdf_1 %>
+</p>
+
+<p>
+  <b>Pdf 2:</b>
+  <%= @product.pdf_2 %>
+</p>
+
+<p>
+  <b>Pdf 3:</b>
+  <%= @product.pdf_3 %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

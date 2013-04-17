@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  desc: MyText
+  advantages: MyText
+  colors: MyString
+  packing: MyString
+  expense: MyText
+  dilution: MyString
+  pdf_1: MyString
+  pdf_2: MyString
+  pdf_3: MyString
+
+two:
+  name: MyString
+  desc: MyText
+  advantages: MyText
+  colors: MyString
+  packing: MyString
+  expense: MyText
+  dilution: MyString
+  pdf_1: MyString
+  pdf_2: MyString
+  pdf_3: MyString

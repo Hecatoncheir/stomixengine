@@ -1,0 +1,1 @@
+{"ts":1366187138665,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class Gallery < ActiveRecord::Base\n  attr_accessible :name, :images\n  has_many :images, dependent: :destroy\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":112}]],"length":112}

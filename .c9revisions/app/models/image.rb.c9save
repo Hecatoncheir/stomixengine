@@ -1,0 +1,5 @@
+{"ts":1366187178942,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class Image < ActiveRecord::Base\n  attr_accessible :data\n  mount_uploader :data, ImageUploader\n  \n  belongs_to :gallery\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":124}]],"length":124}
+{"contributors":[],"silentsave":true,"ts":1366187161532,"patch":[[{"diffs":[[0,"gallery\n"],[1,"  belongs_to :gallery\n"],[0,"end\n"]],"start1":112,"start2":112,"length1":12,"length2":34}]],"length":146,"saved":false}
+{"ts":1366187166518,"patch":[[{"diffs":[[0,"ngs_to :"],[-1,"gallery"],[1,"p"],[0,"\nend\n"]],"start1":126,"start2":126,"length1":20,"length2":14}]],"length":140,"saved":false}
+{"ts":1366187169392,"patch":[[{"diffs":[[0,"gs_to :p"],[1,"roducts"],[0,"\nend\n"]],"start1":127,"start2":127,"length1":13,"length2":20}]],"length":147,"saved":false}
+{"ts":1366187180177,"patch":[[{"diffs":[[0,":product"],[-1,"s"],[0,"\nend\n"]],"start1":133,"start2":133,"length1":14,"length2":13}]],"length":146,"saved":false}
