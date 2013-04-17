@@ -1,12 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+    <% if @product.image? %>
     	<article>
 		  <%= link_to image_tag(@product.image.thumb.url), @product.image.url, class: "fb" %>
-		  <% if current_user %>
-		  <br/>
-		  	<%= link_to "Удалить", method: :delete %>
-		  <% end %>
 		</article>
+    <% end %>
 
 <p>
   <b>Name:</b>

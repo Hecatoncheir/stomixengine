@@ -1,6 +1,7 @@
 StomixEngine::Application.routes.draw do
   
   resources :products
+  post 'products/:id', to: 'products#show'
   resources :items
 
 
