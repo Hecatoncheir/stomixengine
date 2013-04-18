@@ -1,11 +1,15 @@
 class ProductsController < ApplicationController
   
-  helper_method :image_delete
+  before_filter :find_category 
+  
+  def find_category
+    @category = Category.find(params[:category_id])
+  end
   
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = @category.products
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,11 +20,11 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @product = Product.find(params[:id])
+    @product = @category.products.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @product }
+      format.json { render json: [@category, @product] }
     end
   end
 
@@ -43,12 +47,12 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(params[:product])
+    @product = @category.products.new(params[:product])
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render json: @product, status: :created, location: @product }
+        format.html { redirect_to [@category, @product], notice: 'Product was successfully created.' }
+        format.json { render json: [@category, @product], status: :created, location: @product }
       else
         format.html { render action: "new" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -63,7 +67,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to [@category, @product], notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -79,15 +83,10 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to products_url }
+      format.html { redirect_to [@category, @product] }
       format.json { head :no_content }
     end
   end
   
-  
-  def image_delete
-    @product = Product.find(params[:id])
-    @product.remove_image!
-  end
   
 end

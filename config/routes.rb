@@ -1,13 +1,13 @@
 StomixEngine::Application.routes.draw do
   
-  resources :categories
-
-
-  resources :products
+  resources :categories do
+    resources :products
+  end
+  
   resources :items
 
-
   root to: "pages#index"
+  
   
   #Galleries
   

@@ -4,7 +4,26 @@
   <b>Name:</b>
   <%= @category.name %>
 </p>
+<br/>
+<% @category.products.each do |product| %>
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= product.desc %></td>
+    <td><%= product.advantages %></td>
+    <td><%= product.colors %></td>
+    <td><%= product.packing %></td>
+    <td><%= product.expense %></td>
+    <td><%= product.dilution %></td>
+    <td><%= product.pdf_1 %></td>
+    <td><%= product.pdf_2 %></td>
+    <td><%= product.pdf_3 %></td>
+    <td><%= link_to 'Show', category_product_path(@category,product) %></td>
+    <td><%= link_to 'Edit', edit_category_product_path(@category, product) %></td>
+    <td><%= link_to 'Destroy', [@category, product], method: :delete %></td>
+  </tr>
+<% end %>
 
-
+<br />
 <%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Добавить продук', new_category_product_path(@category) %> |
 <%= link_to 'Back', categories_path %>
