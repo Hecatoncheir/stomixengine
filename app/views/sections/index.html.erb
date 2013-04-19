@@ -1,0 +1,13 @@
+<h1>Секции содержащие категории для продуктов</h1>
+
+<% @sections.each do |section| %>
+  <%= link_to section.name, section %>
+  	<div class="actions">
+		<%= link_to 'Изменить', edit_section_path(section) %> |
+		<%= link_to 'Удалить', section, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</div>
+<% end %>
+
+<br />
+
+<%= link_to 'Создать секцию', new_section_path %>

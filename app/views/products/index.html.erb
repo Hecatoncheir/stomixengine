@@ -29,13 +29,13 @@
     <td><%= product.pdf_1 %></td>
     <td><%= product.pdf_2 %></td>
     <td><%= product.pdf_3 %></td>
-    <td><%= link_to 'Show', category_product_path(@category,product) %></td>
-    <td><%= link_to 'Edit', edit_category_product_path(@category, product) %></td>
-    <td><%= link_to 'Destroy', [@category, product], method: :delete %></td>
+    <td><%= link_to 'Show', section_category_product_path(@section,@category,product) %></td>
+    <td><%= link_to 'Edit', edit_section_category_product_path(@section,@category, product) %></td>
+    <td><%= link_to 'Destroy', [@section,@category, product], method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Product', new_category_product_path(@category) %>
+<%= link_to 'New Product', new_section_category_product_path(@section,@category) %>

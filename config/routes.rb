@@ -1,7 +1,9 @@
 StomixEngine::Application.routes.draw do
   
-  resources :categories do
-    resources :products
+  resources :sections do
+    resources :categories do
+      resources :products
+    end
   end
   
   resources :items

@@ -1,6 +1,11 @@
 class ProductsController < ApplicationController
   
+  before_filter :find_section
   before_filter :find_category 
+
+  def find_section
+    @section = Section.find(params[:section_id])
+  end
   
   def find_category
     @category = Category.find(params[:category_id])
@@ -31,7 +36,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.json
   def new
-    @product = Product.new
+    @product = @category.products.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +46,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    @product = @category.products.find(params[:id])
   end
 
   # POST /products
@@ -51,8 +56,8 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to [@category, @product], notice: 'Product was successfully created.' }
-        format.json { render json: [@category, @product], status: :created, location: @product }
+        format.html { redirect_to [@section,@category, @product], notice: 'Product was successfully created.' }
+        format.json { render json: [@section,@category, @product], status: :created, location: @product }
       else
         format.html { render action: "new" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -63,11 +68,11 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.json
   def update
-    @product = Product.find(params[:id])
+    @product = @category.products.find(params[:id])
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to [@category, @product], notice: 'Product was successfully updated.' }
+        format.html { redirect_to [@section,@category, @product], notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -83,7 +88,7 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to [@category, @product] }
+      format.html { redirect_to [@section,@category, @product] }
       format.json { head :no_content }
     end
   end

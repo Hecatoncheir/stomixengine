@@ -11,13 +11,13 @@
 <% @categories.each do |category| %>
   <tr>
     <td><%= category.name %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', [@section, category] %></td>
+    <td><%= link_to 'Edit', edit_section_category_path(@section, category) %></td>
+    <td><%= link_to 'Destroy', [@section, category], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Category', new_category_path %>
+<%= link_to 'New Category', new_section_category_path %>

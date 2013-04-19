@@ -1,8 +1,15 @@
 class CategoriesController < ApplicationController
+  
+  before_filter :find_section
+  
+  def find_section
+    @section = Section.find(params[:section_id])
+  end
+  
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories = @section.categories
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +20,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @category = Category.includes(:products).find(params[:id])
+    @category = @section.categories.includes(:products).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +31,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   # GET /categories/new.json
   def new
-    @category = Category.new
+    @category = @section.categories.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,17 +41,17 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-    @category = Category.find(params[:id])
+    @category = @section.categories.find(params[:id])
   end
 
   # POST /categories
   # POST /categories.json
   def create
-    @category = Category.new(params[:category])
+    @category = @section.categories.new(params[:category])
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        format.html { redirect_to [@section,@category], notice: 'Category was successfully created.' }
         format.json { render json: @category, status: :created, location: @category }
       else
         format.html { render action: "new" }
@@ -56,11 +63,11 @@ class CategoriesController < ApplicationController
   # PUT /categories/1
   # PUT /categories/1.json
   def update
-    @category = Category.find(params[:id])
+    @category = @section.categories.find(params[:id])
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+        format.html { redirect_to [@section, @category], notice: 'Category was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
