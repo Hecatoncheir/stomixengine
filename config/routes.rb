@@ -45,7 +45,6 @@ StomixEngine::Application.routes.draw do
   
   resources :users, only: [:new, :create]
   resources :sessions
-  
-  get "doc/pr.doc"
+
 
 end
