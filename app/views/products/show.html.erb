@@ -10,21 +10,77 @@
 	<%= link_to 'Изменить', edit_section_category_product_path(@section,@category,@product) %>
 <% end %>
 
+<p id="notice"><%= sanitize(notice) %></p><br/>
+
     	<article class="product">
 			<% if @product.image? %>
-		  		<%= link_to image_tag(@product.image.thumb.url), @product.image.url, class: "fb" %>
+		  		<%= link_to image_tag(@product.image.thumb.url), @product.image.url, class: "product_image fb" %>
 			<% end %>
 			
+			<div class="product_info">
+				<h2><%= @product.name %></h2>
+				<%= link_to 'Техническая спецификация', @product.pdf_1 if @product.pdf_1.present? %>
+
+					<%= link_to 'Свидетельство безопасности', @product.pdf_2 if @product.pdf_2.present? %>
+
+				<%= link_to 'Декларация соответствия', @product.pdf_3 if @product.pdf_3.present? %>
+				
+				
+				<% if @product.packing.present? %>
+					<div class="info">
+						<span>Упаковка:</span>
+						<p><%= @product.packing if @product.packing.present? %></p>
+					</div>
+				<% end %>
+				
+				
+				
+			</div>
+			
 			<div class="desc">
-				<h1><%= @product.name %></h1>
-				<p><%= sanitize(@product.desc) %></p>
+				
+				
+			  <% if @product.advantages.present? %>
+				<div class="info with_out_width">
+					<span>Преимущества:</span>
+					 <p><%= sanitize(@product.advantages) %></p>
+				</div>
+			  <% end %>
+				
+				
+			  <% if @product.colors.present? %>
+				<div class="info with_out_width">
+					<span>Расцветка:</span>
+					 <p><%= @product.colors %></p>
+				</div>
+			  <% end %>
+			  
+			  <% if @product.expense.present? %>
+				<div class="info with_out_width">
+					<span>Расход:</span>
+					 <p><%= @product.expense %></p>
+				</div>
+			  <% end %>
+				
+			  <% if @product.dilution.present? %>
+				<div class="info with_out_width">
+					<span>Разбавление:</span>
+					 <p><%= @product.dilution %></p>
+				</div>
+			  <% end %>
+				
+			  <% if @product.desc.present? %>
+				<div class="info with_out_width">
+					<span>Описание:</span>
+					 <p><%= sanitize(@product.desc) %></p>
+				</div>
+			  <% end %>
+				
+				
 			</div>
 			
 		</article>
-	
-	
-	<p id="notice"><%= sanitize(notice) %></p><br/>
-	
+
 </section>
 
 			
