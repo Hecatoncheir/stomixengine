@@ -5,7 +5,7 @@
 </p>
 <%= link_to 'Вернуться', sections_path %>
 <br/>
-<nav>
+<nav class="section_categories" >
 <% @section.categories.each do |category| %>
     <li><%= link_to category.name, [@section, category] %></li>
 

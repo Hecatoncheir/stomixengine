@@ -1,4 +1,27 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+.wrap .in_contant {
+	width:40% !important;
+	float:right;
+	display: block;
+}
+
+.out {
+	display:block;
+	float:left;
+}
+
+nav {
+	color: #959595;
+}
+
+
+.breadcrumbs {
+	margin-top: 10px;
+}
+
+.breadcrumbs a {
+	color: #6B6B6B;
+}
+
+.this {
+	color: #FF8600 !important;
+}

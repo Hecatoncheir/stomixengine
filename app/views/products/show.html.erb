@@ -1,20 +1,31 @@
-<% page_title "Добро пожаловать" %>
+<% page_title @product.name %>
 
-<%= stylesheet_link_tag "pages_home", media:'all' %>
+<section class="out">
+	
+<nav class="breadcrumbs"> 
+	<%= link_to 'Все продукты', sections_path %> > <%= link_to @section.name, @section %> > <%= link_to @category.name, [@section, @category], class: "this" %> <br/>
+</nav>
+
+<% if current_user %>
+	<%= link_to 'Изменить', edit_section_category_product_path(@section,@category,@product) %>
+<% end %>
+
+
+
+    <% if @product.image? %>
+    	<article>
+		  <%= link_to image_tag(@product.image.thumb.url), @product.image.url, class: "fb" %>
+		</article>
+    <% end %>
+	
+	
+	<p id="notice"><%= sanitize(notice) %></p><br/>
+	
+</section>
+
 			
-<div class="PromoGallery">
-	<nav>
-		<%= link_to '- Большие объекты', bigobject_path %>
-		<%= link_to '- Коттеджи', cottages_path %>
-	</nav>
-</div>
-
-	<div class="contant">
-		
+	<div class="contant in_contant">
 		<%= render items, items_for_all: false, items: true  %>
-		
-		<%= render items_for_all, items_for_all: true, items: false  %>
-		
 	</div>
 			
 

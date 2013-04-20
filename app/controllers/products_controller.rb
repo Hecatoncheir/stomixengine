@@ -4,6 +4,12 @@ class ProductsController < ApplicationController
   before_filter :find_category 
   
   before_filter :auth, except:[:show, :index]
+  
+  helper_method :items
+  
+  def items
+    Item.where(page: "products")
+  end
 
   def find_section
     @section = Section.find(params[:section_id])
@@ -59,7 +65,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
         format.html { redirect_to sections_url, notice: 'Product was successfully created.' }
-        format.json { render json: [@section,@category, @product], status: :created, location: @product }
+        format.json { render json: sections_url, status: :created, location: @product }
       else
         format.html { render action: "new" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -74,7 +80,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to sections_url, notice: 'Product was successfully updated.' }
+        format.html { redirect_to [@section,@category, @product], notice: "<br/> <p>Update</p>" }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
