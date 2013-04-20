@@ -1,7 +1,8 @@
 .wrap .in_contant {
-	width:40% !important;
+	width:360px !important;
 	float:right;
 	display: block;
+	margin:0 !important;
 }
 
 .out {
@@ -24,4 +25,10 @@ nav {
 
 .this {
 	color: #FF8600 !important;
+}
+
+.product {
+	float:left;
+	display: block;
+	width: 480px;
 }

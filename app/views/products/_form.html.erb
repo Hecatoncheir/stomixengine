@@ -1,38 +1,38 @@
 <%= form_for([@section, @category, @product]) do |f| %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Название" %><br />
     <%= f.text_field :name %>
   </div>
   
         <div class="field">
-	      <%= f.label :image %><br />
+	      <%= f.label "Изображение" %><br />
 		  
 	      <%= f.file_field :image %>
 	    </div>
   
   <div class="field">
-    <%= f.label :desc %><br />
+    <%= f.label "Описание" %><br />
     <%= f.text_area :desc %>
   </div>
   <div class="field">
-    <%= f.label :advantages %><br />
+    <%= f.label "Преимущества" %><br />
     <%= f.text_area :advantages %>
   </div>
   <div class="field">
-    <%= f.label :colors %><br />
+    <%= f.label "Цвета" %><br />
     <%= f.text_field :colors %>
   </div>
   <div class="field">
-    <%= f.label :packing %><br />
+    <%= f.label "Упаковка" %><br />
     <%= f.text_field :packing %>
   </div>
   <div class="field">
-    <%= f.label :expense %><br />
+    <%= f.label "Расход" %><br />
     <%= f.text_area :expense %>
   </div>
   <div class="field">
-    <%= f.label :dilution %><br />
+    <%= f.label "Разбавление" %><br />
     <%= f.text_field :dilution %>
   </div>
   <div class="field">

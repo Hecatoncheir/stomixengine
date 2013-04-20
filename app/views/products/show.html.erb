@@ -10,13 +10,17 @@
 	<%= link_to 'Изменить', edit_section_category_product_path(@section,@category,@product) %>
 <% end %>
 
-
-
-    <% if @product.image? %>
-    	<article>
-		  <%= link_to image_tag(@product.image.thumb.url), @product.image.url, class: "fb" %>
+    	<article class="product">
+			<% if @product.image? %>
+		  		<%= link_to image_tag(@product.image.thumb.url), @product.image.url, class: "fb" %>
+			<% end %>
+			
+			<div class="desc">
+				<h1><%= @product.name %></h1>
+				<p><%= sanitize(@product.desc) %></p>
+			</div>
+			
 		</article>
-    <% end %>
 	
 	
 	<p id="notice"><%= sanitize(notice) %></p><br/>
