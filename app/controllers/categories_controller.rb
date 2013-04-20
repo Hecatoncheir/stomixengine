@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = @section.categories
+    @categories = @section.categories.includes(:products)
 
     respond_to do |format|
       format.html # index.html.erb
