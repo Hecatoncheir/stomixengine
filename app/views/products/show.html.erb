@@ -1,63 +1,22 @@
-<p id="notice"><%= notice %></p>
+<% page_title "Добро пожаловать" %>
 
-    <% if @product.image? %>
-    	<article>
-		  <%= link_to image_tag(@product.image.thumb.url), @product.image.url, class: "fb" %>
-		</article>
-    <% end %>
+<%= stylesheet_link_tag "pages_home", media:'all' %>
+			
+<div class="PromoGallery">
+	<nav>
+		<%= link_to '- Большие объекты', bigobject_path %>
+		<%= link_to '- Коттеджи', cottages_path %>
+	</nav>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
+	<div class="contant">
+		
+		<%= render items, items_for_all: false, items: true  %>
+		
+		<%= render items_for_all, items_for_all: true, items: false  %>
+		
+	</div>
+			
 
-<p>
-  <b>Desc:</b>
-  <%= @product.desc %>
-</p>
+      
 
-<p>
-  <b>Advantages:</b>
-  <%= @product.advantages %>
-</p>
-
-<p>
-  <b>Colors:</b>
-  <%= @product.colors %>
-</p>
-
-<p>
-  <b>Packing:</b>
-  <%= @product.packing %>
-</p>
-
-<p>
-  <b>Expense:</b>
-  <%= @product.expense %>
-</p>
-
-<p>
-  <b>Dilution:</b>
-  <%= @product.dilution %>
-</p>
-
-<p>
-  <b>Pdf 1:</b>
-  <%= @product.pdf_1 %>
-</p>
-
-<p>
-  <b>Pdf 2:</b>
-  <%= @product.pdf_2 %>
-</p>
-
-<p>
-  <b>Pdf 3:</b>
-  <%= @product.pdf_3 %>
-</p>
-
-<% if current_user %>
-	<%= link_to 'Edit', edit_section_category_product_path(@section,@category,@product) %> |
-<% end %>
-
-<%= link_to 'Back', sections_path %>

@@ -6,17 +6,17 @@
 <% end %>
 
 <%= form_tag sessions_path do %>
-	<div>
+	<div class="field">
 		<%= label_tag :email %>
 		<%= text_field_tag :email, params[:email] %>
 	</div>
 	
-	<div>
+	<div class="field">
 		<%= label_tag :password %>
 		<%= password_field_tag :password %>
 	</div>
 	
-	<%= submit_tag "Войти" %>
+	<%= submit_tag "Войти", class: "field button" %>
 	
 <% end %>
 	
