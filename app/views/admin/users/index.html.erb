@@ -2,11 +2,13 @@
 
 <% @users.each do |user| %>
 
-	<%= user.email %> <br/>
+	<%= user.email %>
 	<%= link_to 'Удалить', [:admin, user], method: :delete %>
+	<br/>
+	<p><br/><%= link_to 'Создать', new_user_path %></p>
 	<br/>
 	<br/>
 
 <% end %>
 
-<%= link_to "Назад", :back %>
+<%= link_to "Назад", admin_path %>

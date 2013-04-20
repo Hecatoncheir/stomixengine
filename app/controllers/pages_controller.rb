@@ -7,7 +7,12 @@ class PagesController < ApplicationController
   end
   
   def services
-    
+  end
+  
+  def tech
+  end
+  
+  def certifications
   end
   
 private

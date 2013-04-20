@@ -25,6 +25,8 @@ StomixEngine::Application.routes.draw do
   #Pages
   
   get 'services', to: 'pages#services'
+  get 'tech', to: 'pages#tech'
+  get 'certifications', to: 'pages#certifications'
   
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
@@ -43,5 +45,7 @@ StomixEngine::Application.routes.draw do
   
   resources :users, only: [:new, :create]
   resources :sessions
+  
+  get "doc/pr.doc"
 
 end
