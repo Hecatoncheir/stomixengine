@@ -1,25 +1,15 @@
-<p id="notice"><%= notice %></p>
 
+<p id="notice"><%= notice %></p>
 <p>
   <h1><%= @section.name %></h1>
 </p>
+<%= link_to 'Вернуться', sections_path %>
 <br/>
-
-<p>
-  <h1>Категории</h1>
-</p>
-
+<nav>
 <% @section.categories.each do |category| %>
-  <tr>
-    <td><%= link_to category.name, [@section, category] %></td>
-    <td><%= link_to 'Edit', edit_section_category_path(@section, category) %></td>
-    <td><%= link_to 'Destroy', [@section, category], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <br />
+    <li><%= link_to category.name, [@section, category] %></li>
+
 <% end %>
 
+</nav>
 
-
-<%= link_to 'Edit', edit_section_path(@section) %> |
-<%= link_to 'Добавить категорию для продуктов', new_section_category_path(@section) %> |
-<%= link_to 'Back', sections_path %>

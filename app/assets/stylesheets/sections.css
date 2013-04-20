@@ -6,7 +6,7 @@
 
 
 .do {
-	margin-top:20px;
+	margin-top:40px;
 	float:left;
 	clear:both;
 }
@@ -17,14 +17,27 @@ h1 {
 	font-family: Arial;
 	margin-bottom:10px;
 	margin-top:10px;
+	float:right;
 }
 
-ul {
-	float:left;
-	clear:left;
+.product_show {
+	clear :both;
 }
 
-ul li {
+
+li {
 	font-size:18px;
 	list-style: none;
+}
+
+nav nav {
+	margin-left: 20px;
+}
+
+.section_name {
+	color: #ff8600 !important;
+}
+
+.product_name {
+	color: #6b6b6b !important;
 }

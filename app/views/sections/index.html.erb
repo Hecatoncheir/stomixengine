@@ -7,7 +7,7 @@
   <!-- Начало вывовда секций -->
   <nav> 
 	  
-	<%= link_to section.name, section %> 
+	<p> <br /><%= link_to section.name, section, class: "section_name" %> </p>
   
   	<% if current_user %>  <!-- Начало вывовда действий над секциями -->
 		<div class="actions">
@@ -22,9 +22,9 @@
 		
 	<!-- Начало вывовда категорий -->
 		
-	<% section.categories.each do |category| %>
+		<% section.categories.each do |category| %>
 		<nav>
-			<li><%= link_to category.name, section_category_path(section, category) %><li>
+			<li> -- <%= link_to category.name, section_category_path(section, category), class: "product_name" %><li>
 				
 			  	<% if current_user %>
 				  	<div class="actions">
@@ -32,12 +32,12 @@
 						<%= link_to 'Изменить', edit_section_category_path(section, category) %> |
 						<%= link_to 'Удалить',[section, category], method: :delete, data: { confirm: 'Are you sure?' } %>
 					</div>
-				<% end %>
+		<% end %>
 				
 		<!-- Начало вывовда продуктов -->
 			<% category.products.each do |product| %>
 			<nav>
-				<li><%= link_to product.name, section_category_product_path(section, category, product) %><li>
+				<li> --- <%= link_to product.name, section_category_product_path(section, category, product) %><li>
 
 			  	<% if current_user %>
 				  	<div class="actions">

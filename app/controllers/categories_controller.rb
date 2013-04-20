@@ -2,6 +2,8 @@ class CategoriesController < ApplicationController
   
   before_filter :find_section
   
+  before_filter :auth, except:[:show, :index]
+  
   def find_section
     @section = Section.find(params[:section_id])
   end
@@ -51,7 +53,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to [@section,@category], notice: 'Category was successfully created.' }
+        format.html { redirect_to sections_url, notice: 'Category was successfully created.' }
         format.json { render json: @category, status: :created, location: @category }
       else
         format.html { render action: "new" }
@@ -67,7 +69,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
-        format.html { redirect_to [@section, @category], notice: 'Category was successfully updated.' }
+        format.html { redirect_to sections_url, notice: 'Category was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -83,7 +85,7 @@ class CategoriesController < ApplicationController
     @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to categories_url }
+      format.html { redirect_to sections_url }
       format.json { head :no_content }
     end
   end

@@ -1,29 +1,14 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <b>Name:</b>
-  <%= @category.name %>
+  <h1><%= @category.name %></h1>
 </p>
+<%= link_to 'Вернуться', sections_path %>
 <br/>
+<nav>
 <% @category.products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.desc %></td>
-    <td><%= product.advantages %></td>
-    <td><%= product.colors %></td>
-    <td><%= product.packing %></td>
-    <td><%= product.expense %></td>
-    <td><%= product.dilution %></td>
-    <td><%= product.pdf_1 %></td>
-    <td><%= product.pdf_2 %></td>
-    <td><%= product.pdf_3 %></td>
-    <td><%= link_to 'Show', section_category_product_path(@section, @category,product) %></td>
-    <td><%= link_to 'Edit', edit_section_category_product_path(@section, @category, product) %></td>
-    <td><%= link_to 'Destroy', [@section, @category, product], method: :delete %></td>
-  </tr>
+    <li><%= link_to product.name, section_category_product_path(@section, @category, product) %></li>
+
 <% end %>
 
-<br />
-<%= link_to 'Edit', edit_section_category_path(@section, @category) %> |
-<%= link_to 'Добавить продук', new_section_category_product_path(@section, @category) %> |
-<%= link_to 'Back', section_categories_path %>
+</nav>
+
