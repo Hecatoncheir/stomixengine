@@ -1,3 +1,4 @@
 cz-fasad.ru
 
+{<img src="https://drone.io/github.com/Rasarts/stomixengine/status.png" />}[https://drone.io/github.com/Rasarts/stomixengine/latest]
 {<img src="https://codeclimate.com/github/Rasarts/stomixengine.png" />}[https://codeclimate.com/github/Rasarts/stomixengine]
